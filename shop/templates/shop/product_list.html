@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Product List</h1>
+  {% if product_list %}
+  <ul>
+    {% for product in product_list %}
+      <li>
+        <a href="{% url 'product_list' %}">{{ product.name }}</a> ${{product.price}}      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no products in the store.</p>
+  {% endif %}
+{% endblock %}

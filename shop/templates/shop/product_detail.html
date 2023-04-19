@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Name: {{ product.name }}</h1>
+
+    <div>
+    {% if product.image %}
+        <img src="{{ product.image.url }}">
+    {% endif %}
+    </div>
+
+  <p><strong>Category:</strong> <a href="">{{ product.category }}</a></p> <!-- category link not yet defined -->
+  <p><strong>Description:</strong> {{ product.description }}</p>
+  <p><strong>Price:</strong> ${{ product.price }}</p>
+  <p><strong>Rating:</strong> {{ product.average_rating }} / 5 stars</p>
+{% endblock %}
